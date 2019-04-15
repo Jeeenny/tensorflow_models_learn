@@ -1,0 +1,7 @@
+［tensorflow中tfrecord格式数据读写］
+要将数据写入.tfrecords文件，需要将每一个样本数据封装成tf.train.Example格式，再将Example逐个写入文件．Example格式中的数据基础类型是tf.train.Feature
+tf.train.Feature()的参数是BytesList/FlaotList/Int64List
+三种基础的数据格式：bytes float int64对应tf.train中的三种类型：BytesList（字符串列表）FloatList(浮点数列表) Int64List(64位整数列表)
+example = tf.train.Example(features=tf.train.Features(
+    feature={'image/height': tf.train.Feature(int64_list=tf.train.Int64List(value=value))}
+))
